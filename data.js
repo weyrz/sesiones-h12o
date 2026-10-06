@@ -24,15 +24,14 @@ const sessions = [
   { date:'2026-11-04', title:'Corticoides en neumonía del paciente crítico', area:'Servicio', owner:'Diego Revilla (Interna)', reviewer:'Silvia Chacón', format:'Programada' },
   { date:'2026-11-05', title:'Fisiopatología: actualización doctrina Monro-Kellie 4.0', area:'Neurocrítico', owner:'Nerea San Martín', reviewer:'Alejandro Caballo', format:'Programada' },
   { date:'2026-11-10', title:'Sesión Estudio INTUPROS', area:'Estudio', owner:'Rosana Ashbaugh', reviewer:'', format:'Programada' },
-  { date:'2026-11-11', title:'Sedación inhalada: indicaciones y problemas', area:'Servicio', owner:'Carmen Galiano', reviewer:'Patricia Rodríguez', format:'Programada' },
+  { date:'2026-11-11', title:'Impella: a propósito de un caso', area:'Cardiológico', owner:'Jose Ángel García', reviewer:'Ivan Mataix', format:'Programada' },
   { date:'2026-11-12', title:'Láctico elevado ¿siempre significa hipoxia?', area:'Servicio', owner:'Mario Peinado', reviewer:'Gonzalo Leoz', format:'Programada' },
   { date:'2026-11-17', title:'Presentación estudios SOMIAMA 2026', area:'Congreso', owner:'Residentes', reviewer:'', format:'Programada' },
   { date:'2026-11-18', title:'Presentación estudios SOMIAMA 2026', area:'Congreso', owner:'Residentes', reviewer:'', format:'Programada' },
-  { date:'2026-11-19', title:'Impella: a propósito de un caso', area:'Cardiológico', owner:'Jose Ángel García', reviewer:'Ivan Mataix', format:'Programada' },
+  { date:'2026-11-19', title:'Sedación inhalada: indicaciones y problemas', area:'Servicio', owner:'Carmen Galiano', reviewer:'Patricia Rodríguez', format:'Programada' },
   { date:'2026-11-20', title:'Industria: Rezafungina', area:'Industria', owner:'Sara (Mundipharma)', reviewer:'', format:'Programada' },
   { date:'2026-11-25', title:'Trauma (tema pendiente)', area:'Trauma', owner:'Diego Molina (P Asturias)', reviewer:'', format:'Programada', hidden:true  },
   { date:'2026-11-26', title:'Trauma (tema pendiente)', area:'Trauma', owner:'Carmen Fuentes (Cádiz)', reviewer:'', format:'Programada', hidden:true  },
   { date:'2026-12-10', title:'Protocolo depuración hepática??', area:'Hepático', owner:'Zaira Molina', reviewer:'', format:'Programada', hidden:true  },
   { date:'2026-12-11', title:'Otra sesion', area:'Servicio', owner:'Adrian Marcos', reviewer:'', format:'Programada', hidden:true  },
-  { date:'2026-10-07', title:'Trauma cerebral penetrante', area:'Trauma', owner:'Jorge Guridi (R3)', reviewer:'Paco Delgado', format:'Programada', hidden:true },
-];
+  ];
