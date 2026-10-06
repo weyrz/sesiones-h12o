@@ -32,7 +32,12 @@ function statusFor(item) {
 }
 
 function badgeClass(format) { return `badge badge-${format.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}`; }
+function nextFor(items) {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  return items.filter(item => statusFor(item) === 'Programada' && new Date(`${item.date}T00:00:00`) >= today).sort((a,b) => a.date.localeCompare(b.date))[0];
+}
 function renderList(items) {
+  const next = nextFor(items);
   const months = items.reduce((acc,item) => { const key = item.date.slice(0,7); (acc[key] ||= []).push(item); return acc; }, {});
   return Object.entries(months).map(([month, monthItems]) => {
     const groups = monthItems.reduce((acc,item) => ((acc[item.date] ||= []).push(item), acc), {});
@@ -40,7 +45,7 @@ function renderList(items) {
     const days = Object.entries(groups).map(([date, dayItems]) => {
       const day = new Date(`${date}T12:00:00`);
       const dayLabel = longDate.format(day).replace(',', '').replace(/^./, c => c.toUpperCase()).split(' de ')[0];
-      return `<div class="day-group">${dayItems.map((item, index) => `<article class="session-row"><div class="session-day">${index === 0 ? dayLabel : ''}</div><div><div class="session-title">${item.title}</div><div class="session-meta">${item.owner ? `<span class="owner">${item.owner}</span>` : ''}${item.reviewer ? `<span class="reviewer">Revisa: ${item.reviewer}</span>` : ''}<span class="area">${item.area}</span></div></div><span class="${badgeClass(statusFor(item))}">${statusFor(item)}</span></article>`).join('')}</div>`;
+      return `<div class="day-group">${dayItems.map((item, index) => `<article id="${item === next ? 'next-session' : ''}" class="session-row"><div class="session-day">${index === 0 ? dayLabel : ''}</div><div><div class="session-title">${item.title}</div><div class="session-meta">${item.owner ? `<span class="owner">${item.owner}</span>` : ''}${item.reviewer ? `<span class="reviewer">Revisa: ${item.reviewer}</span>` : ''}<span class="area">${item.area}</span></div></div><span class="${badgeClass(statusFor(item))}">${statusFor(item)}</span></article>`).join('')}</div>`;
     }).join('');
     return `<section class="month-block"><h3>${monthLabel}</h3>${days}</section>`;
   }).join('');
@@ -55,11 +60,12 @@ function renderSingleCalendar(monthKey, items) {
   const [year, month] = monthKey.split('-').map(Number);
   const first = new Date(year, month - 1, 1); const start = (first.getDay() + 6) % 7; const days = new Date(year, month, 0).getDate();
   const byDate = items.reduce((acc,item) => ((acc[item.date] ||= []).push(item), acc), {});
+  const next = nextFor(items);
   let cells = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(day => `<div class="calendar-head">${day}</div>`).join('');
   for (let i=0; i<start; i++) cells += '<div class="calendar-cell"></div>';
   for (let day=1; day<=days; day++) {
     const key = `${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-    cells += `<div class="calendar-cell"><span class="calendar-date">${day}</span>${(byDate[key] || []).map(item => `<div class="calendar-event"><strong>${item.title}</strong>${item.owner ? `<span>Ponente: ${item.owner}</span>` : ''}${item.reviewer ? `<span>Revisa: ${item.reviewer}</span>` : ''}<span>Área: ${item.area}</span><em>${statusFor(item)}</em></div>`).join('')}</div>`;
+    cells += `<div class="calendar-cell"><span class="calendar-date">${day}</span>${(byDate[key] || []).map(item => `<div id="${item === next ? 'next-session' : ''}" class="calendar-event"><strong>${item.title}</strong>${item.owner ? `<span>Ponente: ${item.owner}</span>` : ''}${item.reviewer ? `<span>Revisa: ${item.reviewer}</span>` : ''}<span>Área: ${item.area}</span><em>${statusFor(item)}</em></div>`).join('')}</div>`;
   }
   const label = monthName.format(first).replace(/^./, c => c.toUpperCase());
   return `<section class="calendar-month"><h3>${label}</h3><div class="calendar">${cells}</div></section>`;
@@ -83,7 +89,7 @@ document.querySelectorAll('.view-button').forEach(button => button.addEventListe
 document.querySelectorAll('.mode-button').forEach(button => button.addEventListener('click', () => { document.querySelectorAll('.mode-button').forEach(b => b.classList.toggle('active', b === button)); state.mode = button.dataset.mode; $('#pageTitle').textContent = state.mode === 'seminarios' ? 'Seminarios' : 'Sesiones del servicio'; resetDatasetControls(); render(); }));
 ['searchInput','formatFilter','areaFilter'].forEach(id => $(`#${id}`).addEventListener('input', render));
 $('#monthFilter').addEventListener('change', event => { state.semesterKey = event.target.value; render(); });
-$('#todayButton').addEventListener('click', () => { document.querySelector('#agenda').scrollIntoView({ behavior:'smooth' }); });
+$('#todayButton').addEventListener('click', () => { (document.querySelector('#next-session') || document.querySelector('#agenda')).scrollIntoView({ behavior:'smooth', block:'center' }); });
 $('#printButton').addEventListener('click', () => {
   state.view = 'list';
   document.querySelectorAll('.view-button').forEach(button => button.classList.toggle('active', button.dataset.view === 'list'));
