@@ -31,7 +31,8 @@ body.dark .calendar-event { color:#dceafa; }
 .month-block { margin-bottom:26px; }.month-block:last-child { margin-bottom:0; }.month-block > h3 { margin:12px 0 7px 54px; color:var(--navy); font:800 18px Manrope,sans-serif; letter-spacing:-.4px; border-bottom:1px solid var(--line); padding-bottom:9px; }
 .month-picker { display:flex; align-items:center; gap:12px; }.month-picker select { border:1px solid var(--line); border-radius:8px; background:var(--white); color:var(--navy); padding:8px 28px 8px 10px; font:600 12px 'DM Sans'; }.calendar-month { margin:12px 0 24px; }.calendar-month h3 { margin:0 0 10px; font:800 18px Manrope,sans-serif; color:var(--navy); }.calendar-event { display:flex; flex-direction:column; gap:3px; }.calendar-event strong { font-size:11px; line-height:1.25; }.calendar-event span { font-size:10px; color:var(--muted); line-height:1.25; }.calendar-event em { margin-top:2px; font-size:9px; color:var(--blue); font-style:normal; font-weight:700; }
 @media print {
-  @page { size:A4; margin:12mm; }
+  @page { size:A4; margin:38mm 12mm 12mm; }
+  .print-qr { display:block !important; position:fixed; top:-28mm; left:0; width:24mm; height:24mm; }
   body { background:#fff; color:#172b4d; }
   .topbar, .hero-actions, .mode-toggle, .stats, .filters, .info-strip, .footer, .empty-state, .panel-toolbar { display:none !important; }
   .shell { max-width:none; padding:0; }
@@ -62,3 +63,4 @@ body.dark .calendar-event { color:#dceafa; }
   .session-title { font-size:10px; margin-bottom:2px; }
   .badge { padding:3px 5px; }
 }
+.print-qr { display:none; }
