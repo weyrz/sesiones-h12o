@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Editor de agenda H12O</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="editor.css"></head>
+<body><main class="shell">
+<h1>Editor de agenda</h1>
+<p>Los cambios se guardan en este navegador. Para publicarlos, descarga los datos y sustituye el archivo correspondiente en GitHub.</p>
+<a href="index.html">Ver agenda publicada</a>
+<div class="editor-toolbar"><label>Agenda <select id="dataset"><option value="sessions">Sesiones</option><option value="seminarios">Seminarios</option></select></label><button id="add" class="button button-primary">Añadir entrada</button><button id="download" class="button button-ghost">Descargar datos para publicar</button></div>
+<p id="saveStatus" role="status"></p><p id="destination"></p>
+<section class="workspace-panel editor-list" id="entries" aria-label="Entradas"></section>
+<dialog id="entryDialog"><form id="entryForm">
+<h2 id="formTitle">Entrada</h2>
+<label>Fecha<input name="date" type="date" required></label>
+<label>Título<input name="title" required></label>
+<label>Área<input name="area" required></label>
+<label>Ponente<input name="owner"></label>
+<label>Revisor<input name="reviewer"></label>
+<label>Estado<select name="format"><option>Programada</option><option>Realizada</option><option>No hay sesión</option></select></label>
+<label class="checkbox-label"><input name="hidden" type="checkbox">Ocultar entrada</label>
+<div class="editor-toolbar"><button class="button button-primary" type="submit">Guardar en este navegador</button><button class="button button-ghost" type="button" id="cancel">Cancelar</button></div>
+</form></dialog>
+</main><script src="data.js"></script><script src="seminarios/data.js"></script><script src="editor.js"></script></body></html>

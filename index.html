@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102a43" />
+    <title>Sesiones H12O | Planificación del servicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Sesiones H12O, inicio">
+        <span class="brand-mark">H<sub>2</sub>O</span>
+        <span><strong>Sesiones</strong><small>Planificación del servicio</small></span>
+      </a>
+      <nav class="quick-links" aria-label="Enlaces rápidos">
+        <a href="https://aiccm-my.sharepoint.com/:l:/g/personal/adrian_marcos_salud_madrid_org/JABqm1ikIPjQRIf4wmFkmtsaAZ9BObHApLgQug81bmZ-JEw?e=C9XsF9" target="_blank" rel="noopener"><svg class="ms-icon lists-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8h9M8 12h9M8 16h9M5.5 8h.01M5.5 12h.01M5.5 16h.01"/></svg><span>Repositorio Sesiones y Seminarios</span><b>↗</b></a>
+        <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_ZWM1ODY1NWEtOTNmMS00Y2UwLWI1NTAtMTExMzU0YTQxMTEw%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522281412e0-2f0e-4e2b-8790-1e1d44ea0a80%2522%252c%2522Oid%2522%253a%252284a345af-5e17-43b2-ba12-8ec4741c9b93%2522%252c%2522MessageId%2522%253a%25220%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=9195bc55-68a2-4620-807c-265ca3826a7e&directDl=true&msLaunch=true&enableMobilePage=true" target="_blank" rel="noopener"><svg class="ms-icon teams-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="17.5" cy="6.5" r="2.5"/><path d="M14 10h7v6.5a2 2 0 0 1-2 2h-5zM4 8h9v10H6a2 2 0 0 1-2-2zM7 5h6v3H7zM7 12h3M8.5 10v6"/></svg><span>Enlace Teams</span><b>↗</b></a>
+      </nav>
+      <button class="icon-button" id="themeToggle" aria-label="Cambiar tema">☼</button>
+    </header>
+
+    <main id="inicio" class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Planificación · 2026</p>
+          <h1 id="pageTitle">Sesiones del servicio</h1>
+        </div>
+        <div class="hero-actions">
+          <button class="button button-ghost" id="todayButton">Hoy</button>
+          <button class="button button-primary" id="printButton">↗ Exportar / imprimir</button>
+        </div>
+      </section>
+
+      <div class="mode-toggle" role="tablist" aria-label="Tipo de actividad">
+        <button class="mode-button active" data-mode="sessions" role="tab">Sesiones</button>
+        <button class="mode-button" data-mode="seminarios" role="tab">Seminarios</button>
+      </div>
+
+      <section class="stats" aria-label="Resumen de la agenda">
+        <article class="stat-card"><span class="stat-label">Sesiones en la agenda</span><strong id="monthCount">0</strong><span class="stat-note">en total</span></article>
+        <article class="stat-card accent"><span class="stat-label">Próxima sesión</span><strong id="nextDate">—</strong><span class="stat-note" id="nextTitle">Sin próximas sesiones</span></article>
+      </section>
+
+      <section id="agenda" class="workspace-panel">
+        <div class="panel-toolbar">
+          <div class="month-picker">
+            <h2 id="monthTitle">Toda la agenda</h2>
+            <select id="monthFilter" aria-label="Seleccionar semestre">
+              <option value="all">Toda la agenda</option>
+            </select>
+          </div>
+          <div class="view-switcher" role="tablist" aria-label="Vista de la agenda">
+            <button class="view-button active" data-view="list" role="tab">Lista</button>
+            <button class="view-button" data-view="calendar" role="tab">Calendario</button>
+          </div>
+        </div>
+
+        <div class="filters">
+          <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar sesión, ponente o tema…" /></label>
+          <label class="select-box"><span>Estado</span><select id="formatFilter"><option value="all">Todos</option></select></label>
+          <label class="select-box"><span>Área</span><select id="areaFilter"><option value="all">Todas</option></select></label>
+        </div>
+
+        <div id="agendaView" class="agenda-view"></div>
+        <div id="emptyState" class="empty-state" hidden><span class="empty-icon">◌</span><h3>No hay sesiones que coincidan</h3><p>Prueba a cambiar la búsqueda o los filtros.</p></div>
+      </section>
+
+    </main>
+
+    <footer id="archivo" class="footer"><span>Sesiones H12O</span><span>Última actualización: <time id="updatedAt"></time></span></footer>
+    <script src="data.js"></script>
+    <script src="seminarios/data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
