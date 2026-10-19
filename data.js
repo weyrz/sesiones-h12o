@@ -15,6 +15,7 @@ const sessions = [
   { date:'2026-10-13', title:'No hay sesión (ESICM)', area:'ESICM', owner:'', reviewer:'', format:'No hay sesión' },
   { date:'2026-10-14', title:'No hay sesión (ESICM)', area:'ESICM', owner:'', reviewer:'', format:'No hay sesión' },
   { date:'2026-10-15', title:'Trauma cerebral penetrante', area:'Trauma', owner:'Jorge Guridi (R3)', reviewer:'Paco Delgado', format:'Programada' },
+  { date:'2026-10-20', title:'Presentación resultados "De medir a mejorar" Indicadores de calidad en pacientes con VMI', area:'Respiratorio', owner:'Patricia Rodríguez Villamizar', reviewer:'', format:'Programada' },
   { date:'2026-10-21', title:'Implicaciones en la definición SDRA del 2024: utilidad o confusión?', area:'Respiratorio', owner:'Álvaro González de Vega (R3)', reviewer:'Ignacio Sáez', format:'Programada' },
   { date:'2026-10-22', title:'Nueva definición del infarto agudo de miocardio', area:'Cardiológico', owner:'Eduardo Aguirre (R4)', reviewer:'Alejandro Moneo', format:'Programada' },
   { date:'2026-10-27', title:'Fístula broncoalveolar traumática', area:'Trauma', owner:'Julia Guerra (Fuenlabrada)', reviewer:'Jesús Barea', format:'Programada' },
