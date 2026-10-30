@@ -20,19 +20,40 @@ const sessions = [
   { date:'2026-10-22', title:'Nueva definición del infarto agudo de miocardio', area:'Cardiológico', owner:'Eduardo Aguirre (R4)', reviewer:'Alejandro Moneo', format:'Programada' },
   { date:'2026-10-27', title:'Fístula broncoalveolar traumática', area:'Trauma', owner:'Julia Guerra (Fuenlabrada)', reviewer:'Jesús Barea', format:'Programada' },
   { date:'2026-10-28', title:'Trauma intestinal o mesentérico', area:'Trauma', owner:'Juan Carlos Rivero (Gómez Ulla)', reviewer:'Rubén Cillero', format:'Programada' },
-  { date:'2026-10-29', title:'Retirada de dispositivos tras cirugía cardiaca: cables de marcapasos, tubos de tórax', area:'Cardiológico', owner:'Marta Barba (Getafe)', reviewer:'Nerea Quílez', format:'Programada' },
-  { date:'2026-11-03', title:'¿En el trauma grave, extubación o traqueostomía precoz?', area:'Trauma', owner:'María Valero (Logroño)', reviewer:'Pablo Risco', format:'Programada' },
+  { date:'2026-10-29', title:'Cancelada', area:'', owner:'', reviewer:'', format:'No hay sesión' },
+  { date:'2026-11-03', title:'No hay sesión', area:'', owner:'', reviewer:'', format:'No hay sesión' },
   { date:'2026-11-04', title:'Corticoides en neumonía del paciente crítico', area:'Servicio', owner:'Diego Revilla (Interna)', reviewer:'Silvia Chacón', format:'Programada' },
   { date:'2026-11-05', title:'Fisiopatología: actualización doctrina Monro-Kellie 4.0', area:'Neurocrítico', owner:'Nerea San Martín', reviewer:'Alejandro Caballo', format:'Programada' },
   { date:'2026-11-10', title:'Sesión Estudio INTUPROS', area:'Estudio', owner:'Rosana Ashbaugh', reviewer:'', format:'Programada' },
   { date:'2026-11-11', title:'Impella: a propósito de un caso', area:'Cardiológico', owner:'Jose Ángel García', reviewer:'Ivan Mataix', format:'Programada' },
   { date:'2026-11-12', title:'Láctico elevado ¿siempre significa hipoxia?', area:'Servicio', owner:'Mario Peinado', reviewer:'Gonzalo Leoz', format:'Programada' },
+  { date:'2026-11-13', title:'¿En el trauma grave, extubación o traqueostomía precoz?', area:'Trauma', owner:'María Valero (Logroño)', reviewer:'Pablo Risco', format:'Programada' },
   { date:'2026-11-17', title:'Presentación estudios SOMIAMA 2026', area:'Congreso', owner:'Residentes', reviewer:'', format:'Programada' },
   { date:'2026-11-18', title:'Presentación estudios SOMIAMA 2026', area:'Congreso', owner:'Residentes', reviewer:'', format:'Programada' },
-  { date:'2026-11-19', title:'Sedación inhalada: indicaciones y problemas', area:'Servicio', owner:'Carmen Galiano', reviewer:'Patricia Rodríguez', format:'Programada' },
+  { date:'2026-11-19', title:'Retirada de dispositivos tras cirugía cardiaca: cables de marcapasos, tubos de tórax', area:'Cardiológico', owner:'Marta Barba (Getafe)', reviewer:'Nerea Quílez', format:'Programada' },
   { date:'2026-11-20', title:'Industria: Rezafungina', area:'Industria', owner:'Sara (Mundipharma)', reviewer:'', format:'Programada' },
-  { date:'2026-11-25', title:'Trauma (tema pendiente)', area:'Trauma', owner:'Diego Molina (P Asturias)', reviewer:'', format:'Programada', hidden:true  },
-  { date:'2026-11-26', title:'Trauma (tema pendiente)', area:'Trauma', owner:'Carmen Fuentes (Cádiz)', reviewer:'', format:'Programada', hidden:true  },
+  { date:'2026-11-24', title:'No hay sesión (SOMIAMA)', area:'SOMIAMA', owner:'', reviewer:'', format:'No hay sesión' },
+  { date:'2026-11-25', title:'Indicaciones de neurocirugía urgente: riesgo vs futilidad', area:'Trauma', owner:'Carmen Fuentes (Cádiz)', reviewer:'Carolina Mudarra', format:'Programada' },
+  { date:'2026-11-26', title:'Resultados encuesta "Navigating interpersonal conflict through workplace curiosity"', area:'Servicio', owner:'Mercedes H Hurtado', reviewer:'', format:'Programada' },
+  
+  { date:'2026-12-01', title:'¿Sigue existiendo la enfermedad por contraste intravenoso?', area:'Servicio', owner:'Jimmy Lancelot', reviewer:'Zaira Molina', format:'Programada' },
+  { date:'2026-12-02', title:'Papel de la ecografía en la caracterización inicial del shock', area:'Servicio', owner:'Luis Blanco', reviewer:'Gonzalo Leoz', format:'Programada' },
+  { date:'2026-12-03', title:'Shock séptico y shock séptico refractario', area:'Servicio', owner:'Antonio J González (Interna)', reviewer:'Susana Temprano', format:'Programada' },
+  { date:'2026-12-09', title:'Parada cardiaca traumática', area:'Trauma', owner:'David Cateura (Segovia)', reviewer:'Lidia Orejón', format:'Programada' },
+  { date:'2026-12-10', title:'Sedación inhalada: indicaciones y problemas', area:'Servicio', owner:'Carmen Galiano', reviewer:'Patricia Rodríguez', format:'Programada' },
+  { date:'2026-12-15', title:'Rotación externa Toronto y simposio Pleural Pressure (PLUG)', area:'Servicio', owner:'María J Lapastora', reviewer:'Isaías Martín', format:'Programada' },
+  { date:'2026-12-16', title:'Tema pendiente', area:'Trauma', owner:'Marta Martín (Rey Juan Carlos)', reviewer:'Adrián Marcos', format:'Programada' },
+  { date:'2026-12-17', title:'Tema pendiente', area:'Trauma', owner:'Javier Arantón (NS La Candelaria)', reviewer:'Paco Delgado', format:'Programada' },
+  { date:'2026-12-18', title:'DESCANSO NAVIDAD', area:'', owner:'', reviewer:'', format:'No hay sesión' },
+
+  
+  
+  
+  
+  
+  
   { date:'2026-12-10', title:'Protocolo depuración hepática??', area:'Hepático', owner:'Zaira Molina', reviewer:'', format:'Programada', hidden:true  },
   { date:'2026-12-11', title:'Otra sesion', area:'Servicio', owner:'Adrian Marcos', reviewer:'', format:'Programada', hidden:true  },
+  { date:'2026-12-15', title:'Rotación externa Toronto y simposio Pleural Pressure (PLUG)', area:'Servicio', owner:'María J Lapastora', reviewer:'Isaías Martín', format:'Programada', hidden:true  },
+
   ];
