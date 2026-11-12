@@ -11,7 +11,7 @@ const seminarios = [
 { date:'2026-12-03', title:'Fundamentos de farmacocinética en pacientes con TCRR', area:'UCI General', owner:'Gonzalo Leoz', format:'Programada' } ,
 { date:'2026-12-10', title:'No hay seminario', area:'', owner:'', format:'No hay seminario' } ,
 { date:'2026-12-17', title:'Casos de error diagnóstico', area:'UCI General', owner:'Mª Cruz Martín', format:'Programada' } ,
-{ date:'2027-01-21', title:'La PAFI no sólo es el pulmón: limitaciones de un parámetro muy empleado', area:'Respiratorio', owner:'Alejandeo Moneo', format:'Programada' } ,
+{ date:'2027-01-21', title:'¿De qué dependen las fluctuaciones de la PAFI?', area:'Respiratorio', owner:'Alejandeo Moneo', format:'Programada' } ,
 
 
 
