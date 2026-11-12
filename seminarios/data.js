@@ -10,7 +10,7 @@ const seminarios = [
 { date:'2026-11-26', title:'Pendiente de título', area:'UCI General', owner:'Jesús Barea', format:'Programada', hidden: 'true'} ,
 { date:'2026-12-03', title:'Fundamentos de farmacocinética en pacientes con TCRR', area:'UCI General', owner:'Gonzalo Leoz', format:'Programada' } ,
 { date:'2026-12-10', title:'No hay seminario', area:'', owner:'', format:'No hay seminario' } ,
-{ date:'2026-12-19', title:'Casos de error diagnóstico', area:'UCI General', owner:'Mª Cruz Martín', format:'Programada' } ,
+{ date:'2026-12-17', title:'Casos de error diagnóstico', area:'UCI General', owner:'Mª Cruz Martín', format:'Programada' } ,
 
 
 ];
