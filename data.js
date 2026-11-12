@@ -39,10 +39,10 @@ const sessions = [
   { date:'2026-12-01', title:'¿Sigue existiendo la enfermedad por contraste intravenoso?', area:'Servicio', owner:'Jimmy Lancelot', reviewer:'Zaira Molina', format:'Programada' },
   { date:'2026-12-02', title:'Papel de la ecografía en la caracterización inicial del shock', area:'Servicio', owner:'Luis Blanco', reviewer:'Gonzalo Leoz', format:'Programada' },
   { date:'2026-12-03', title:'Shock séptico y shock séptico refractario', area:'Servicio', owner:'Antonio J González (Interna)', reviewer:'Susana Temprano', format:'Programada' },
-  { date:'2026-12-09', title:'Parada cardiaca traumática', area:'Trauma', owner:'David Cateura (Segovia)', reviewer:'Lidia Orejón', format:'Programada' },
+  { date:'2026-12-16', title:'Parada cardiaca traumática', area:'Trauma', owner:'David Cateura (Segovia)', reviewer:'Lidia Orejón', format:'Programada' },
   { date:'2026-12-10', title:'Sesión Estudio INTUPROS', area:'Estudio', owner:'Rosana Ashbaugh', reviewer:'', format:'Programada' },
   { date:'2026-12-15', title:'Rotación externa Toronto y simposio Pleural Pressure (PLUG)', area:'Servicio', owner:'María J Lapastora', reviewer:'Isaías Martín', format:'Programada' },
-  { date:'2026-12-16', title:'Tema pendiente', area:'Trauma', owner:'Marta Martín (Rey Juan Carlos)', reviewer:'Adrián Marcos', format:'Programada' },
+  { date:'2026-12-09', title:'Tema pendiente', area:'Trauma', owner:'Marta Martín (Rey Juan Carlos)', reviewer:'Adrián Marcos', format:'Programada' },
   { date:'2026-12-17', title:'Tema pendiente', area:'Trauma', owner:'Javier Arantón (NS La Candelaria)', reviewer:'Paco Delgado', format:'Programada' },
   { date:'2026-12-18', title:'DESCANSO NAVIDAD', area:'', owner:'', reviewer:'', format:'No hay sesión' },
 
