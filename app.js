@@ -164,15 +164,20 @@ $('#printButton').addEventListener('click', () => {
 $('#themeToggle').addEventListener('click', () => { document.body.classList.toggle('dark'); });
 $('#updatedAt').textContent = new Intl.DateTimeFormat('es-ES', { day:'numeric', month:'long', year:'numeric' }).format(new Date());
 
-// Actualizar el título
-$('#pageTitle').textContent = state.mode === 'seminarios'
-  ? 'Seminarios'
-  : 'Sesiones del servicio';
+const params = new URLSearchParams(window.location.search);
 
-// Cargar los filtros y semestres del modo seleccionado
-resetDatasetControls();
+const requestedMode = params.get('mode') === 'seminarios'
+  ? 'seminarios'
+  : 'sessions';
 
-// Seleccionar el semestre solicitado, si está disponible
+const requestedSemester = params.get('semester');
+
+// Initialize the requested mode using the existing button handler
+document.querySelector(
+  `.mode-button[data-mode="${requestedMode}"]`
+).click();
+
+// Select the requested semester if it exists
 if (
   requestedSemester &&
   [...$('#monthFilter').options].some(
@@ -183,9 +188,5 @@ if (
   $('#monthFilter').value = requestedSemester;
 }
 
-// Mostrar la agenda una vez completada la inicialización
+// Render the agenda
 render();
-
-window.addEventListener('load', () => {
-  render();
-});
