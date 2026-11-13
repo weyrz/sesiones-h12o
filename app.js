@@ -183,5 +183,9 @@ if (
   $('#monthFilter').value = requestedSemester;
 }
 
-// Mostrar la agenda
+// Mostrar la agenda una vez completada la inicialización
 render();
+
+window.addEventListener('load', () => {
+  render();
+});
