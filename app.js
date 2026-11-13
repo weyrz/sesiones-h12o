@@ -89,7 +89,72 @@ document.querySelectorAll('.view-button').forEach(button => button.addEventListe
 document.querySelectorAll('.mode-button').forEach(button => button.addEventListener('click', () => { document.querySelectorAll('.mode-button').forEach(b => b.classList.toggle('active', b === button)); state.mode = button.dataset.mode; $('#pageTitle').textContent = state.mode === 'seminarios' ? 'Seminarios' : 'Sesiones del servicio'; resetDatasetControls(); render(); }));
 ['searchInput','formatFilter','areaFilter'].forEach(id => $(`#${id}`).addEventListener('input', render));
 $('#monthFilter').addEventListener('change', event => { state.semesterKey = event.target.value; render(); });
-$('#todayButton').addEventListener('click', () => { (document.querySelector('#next-session') || document.querySelector('#agenda')).scrollIntoView({ behavior:'smooth', block:'center' }); });
+
+$('#todayButton').addEventListener('click', () => {
+  // Fecha y hora actuales en Madrid
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Madrid',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23'
+  }).formatToParts(new Date());
+
+  const get = type => parts.find(p => p.type === type).value;
+  const today = `${get('year')}-${get('month')}-${get('day')}`;
+  const hour = Number(get('hour'));
+
+  // Antes de las 15:00, incluir la actividad de hoy.
+  // Desde las 15:00, buscar desde mañana.
+  const candidates = activeData()
+    .filter(item =>
+      item.date > today ||
+      (item.date === today && hour < 15)
+    )
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const target = candidates[0];
+
+  if (!target) {
+    $('#agenda').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+    return;
+  }
+
+  // Seleccionar automáticamente el semestre correcto
+  state.semesterKey = semesterFor(target.date);
+  $('#monthFilter').value = state.semesterKey;
+
+  // Quitar filtros que puedan ocultar la actividad
+  $('#searchInput').value = '';
+  $('#formatFilter').value = 'all';
+  $('#areaFilter').value = 'all';
+
+  // Actualizar la agenda
+  render();
+
+  // Desplazarse a la actividad seleccionada
+  const items = currentSessions();
+  const index = items.findIndex(item => item === target);
+
+  // Buscar la actividad por su posición en la agenda
+  const selector = state.view === 'list'
+    ? '.session-row'
+    : '.calendar-event';
+
+  const elements = document.querySelectorAll(selector);
+  const element = elements[index];
+
+  (element || document.querySelector('#agenda')).scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+});
+
 $('#printButton').addEventListener('click', () => {
   state.view = 'list';
   document.querySelectorAll('.view-button').forEach(button => button.classList.toggle('active', button.dataset.view === 'list'));
@@ -98,4 +163,25 @@ $('#printButton').addEventListener('click', () => {
 });
 $('#themeToggle').addEventListener('click', () => { document.body.classList.toggle('dark'); });
 $('#updatedAt').textContent = new Intl.DateTimeFormat('es-ES', { day:'numeric', month:'long', year:'numeric' }).format(new Date());
-resetDatasetControls(); render();
+
+// Actualizar el título
+$('#pageTitle').textContent = state.mode === 'seminarios'
+  ? 'Seminarios'
+  : 'Sesiones del servicio';
+
+// Cargar los filtros y semestres del modo seleccionado
+resetDatasetControls();
+
+// Seleccionar el semestre solicitado, si está disponible
+if (
+  requestedSemester &&
+  [...$('#monthFilter').options].some(
+    option => option.value === requestedSemester
+  )
+) {
+  state.semesterKey = requestedSemester;
+  $('#monthFilter').value = requestedSemester;
+}
+
+// Mostrar la agenda
+render();
