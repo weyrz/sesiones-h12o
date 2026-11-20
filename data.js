@@ -45,7 +45,7 @@ const sessions = [
   { date:'2026-12-09', title:'Actualización de la lesión axonal difusa: nueva clasificación e implicacion pronostica', area:'Trauma', owner:'Marta Martín (Rey Juan Carlos)', reviewer:'Adrián Marcos', format:'Programada' },
   { date:'2026-12-17', title:'Interpretación del valor de la hemoglobina en la resucitación inicial al trauma grave', area:'Trauma', owner:'Javier Arantón (NS La Candelaria)', reviewer:'Paco Delgado', format:'Programada' },
   { date:'2026-12-18', title:'DESCANSO NAVIDAD', area:'', owner:'', reviewer:'', format:'No hay sesión' },
- { date:'2026-01-13', title:'Proyecto FIS Codificación en trauma con LLM', area:'Investigación', owner:'Jesús Barea', reviewer:'', format:'Programada' },
+ { date:'2027-01-13', title:'Proyecto FIS Codificación en trauma con LLM', area:'Investigación', owner:'Jesús Barea', reviewer:'', format:'Programada' },
   
   
   
