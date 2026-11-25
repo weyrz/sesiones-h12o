@@ -7,12 +7,13 @@ const seminarios = [
 { date:'2026-11-05', title:'Técnicas invasivas en la UCI', area:'UCI General', owner:'Paco Delgado', format:'Programada' } ,
 { date:'2026-11-12', title:'No hay seminario', area:'', owner:'', format:'No hay seminario' } ,
 { date:'2026-11-19', title:'Fundamentos de ventilación mecánica', area:'UCI General', owner:'Isaías Martín', format:'Programada' } ,
-{ date:'2026-11-26', title:'Casos clínicos con test viscoelásticos', area:'UCI General', owner:'Jesús Barea', format:'Programada', hidden: 'true'} ,
+{ date:'2026-11-26', title:'Dudas sobre donación y trasplantes', area:'UCI General', owner:'Mario Chico', format:'Programada'} ,
+
 { date:'2026-12-03', title:'Fundamentos de farmacocinética en pacientes con TCRR', area:'UCI General', owner:'Gonzalo Leoz', format:'Programada' } ,
 { date:'2026-12-10', title:'No hay seminario', area:'', owner:'', format:'No hay seminario' } ,
 { date:'2026-12-17', title:'Casos de error diagnóstico', area:'UCI General', owner:'Mª Cruz Martín', format:'Programada' } ,
 { date:'2027-01-21', title:'¿De qué dependen las fluctuaciones de la PAFI?', area:'Respiratorio', owner:'Alejandro Moneo', format:'Programada' } ,
 
 
-
+date:'2027-01-14', title:'Casos clínicos con test viscoelásticos', area:'UCI General', owner:'Jesús Barea', format:'Programada'} ,
 ];
