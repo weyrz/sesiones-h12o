@@ -15,5 +15,5 @@ const seminarios = [
 { date:'2027-01-21', title:'¿De qué dependen las fluctuaciones de la PAFI?', area:'Respiratorio', owner:'Alejandro Moneo', format:'Programada' } ,
 
 
-date:'2027-01-14', title:'Casos clínicos con test viscoelásticos', area:'UCI General', owner:'Jesús Barea', format:'Programada'} ,
+{ date:'2027-01-14', title:'Casos clínicos con test viscoelásticos', area:'UCI General', owner:'Jesús Barea', format:'Programada'} ,
 ];
